@@ -1,0 +1,63 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static "css/main_css.css" %}">
+    <link rel="stylesheet" href="{% static "css/login_css.css" %}">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="{% url 'main:index' %}">
+            <img class="logo1" src="{% static 'images/logo.png' %}" alt="">
+          </a>
+        </div>
+        <div class="menu">
+            <a href="#">Взять в аренду</a>
+            <a href="#">Сдать в аренду</a>
+            <a href="#">Автоцентры</a>
+            <div class="menu-item-dropdown">
+                <a href="#">О нас</a>
+                {% comment %} <div class="dropdown-menu">
+                    <a href="#">Сервис 1</a>
+                    <a href="#">Сервис 2</a>
+                    <a href="#">Сервис 3</a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <div class="actions">
+            <div class="city-container">
+                <button class="city-button" id="city-button" aria-expanded="false">Алматы</button>
+                <ul class="city-dropdown" id="city-dropdown">
+                    <li data-city="Алматы" class="selected">Алматы</li>
+                    <li data-city="Астана">Астана</li>
+                    <li data-city="Шымкент">Шымкент</li>
+                    <li data-city="Караганда">Караганда</li>
+                    <li data-city="Актобе">Актобе</li>
+                    <li data-city="Тараз">Тараз</li>
+                    <li data-city="Павлодар">Павлодар</li>
+                    <li data-city="Орал">Орал</li>
+                    <li data-city="Семей">Семей</li>
+                    <li data-city="Костанай">Костанай</li>
+                    <li data-city="Атырау">Атырау</li>
+                    <li data-city="Кызылорда">Кызылорда</li>
+                    <li data-city="Актау">Актау</li>
+                    <li data-city="Кокшетау">Кокшетау</li>
+                    <li data-city="Темиртау">Темиртау</li>
+                    <li data-city="Туркестан">Туркестан</li>
+                </ul>
+            </div>
+            <span class="settings-icon">&#9881;</span>
+            <a href="{% url "users:login" %}">Войти</a>
+            <a href="#">Рус</a>
+        </div>
+    </nav>
+    {% block content %}{% endblock content %}
+    <script src="{% static "js/main_js.js" %}"></script>
+</body>
+</html>
