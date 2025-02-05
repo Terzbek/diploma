@@ -19,7 +19,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls', namespace="users")),
     path('', include('main.urls', namespace="main")),
+    path('cars/', include('cars.urls', namespace="cars")),
+    path('users/', include('users.urls', namespace="users")),
 ]
-# localhost/users
+
+#http://127.0.0.1:8000/cars/

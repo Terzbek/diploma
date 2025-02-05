@@ -82,12 +82,15 @@
   }
   
   main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    background-color: #f5f5f5;
+    display: block; /* Убираем flex для вертикального расположения */
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
   }
+  
   
   .login-container {
     background-color: white;

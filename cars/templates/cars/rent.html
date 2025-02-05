@@ -1,0 +1,94 @@
+{% extends "main/index.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <h1 class="title">Создать объявление о сдаче автомобиля в аренду</h1>
+    <form class="rental-form">
+      <fieldset>
+        <legend>Выбор автомобиля</legend>
+        <label for="category">Категория*</label>
+        <select id="category" name="category">
+          {% for category in categories %}
+            <option value="">{{category.name}}</option>
+          {% endfor %}
+        </select>
+        
+        <label for="brand">Марка*</label>
+        <select id="brand" name="brand">
+          {% for brand in brands %}
+            <option value="">{{brand.name}}</option>
+          {% endfor %}
+          
+        </select>
+
+        <label for="model">Модель*</label>
+        <select id="model" name="model">
+          <option value="">Выберите модель</option>
+          <option value="camry">Camry</option>
+          <option value="x5">X5</option>
+          <option value="e-class">E-Class</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Фотографии</legend>
+        <label for="photos">Загрузите фотографии автомобиля:</label>
+        <input type="file" id="photos" name="photos" multiple>
+      </fieldset>
+
+      <fieldset>
+        <legend>Описание и цена</legend>
+        <label for="price">Цена за день (KZT):</label>
+        <input type="number" id="price" name="price">
+
+        <label for="year">Год выпуска:</label>
+        <input type="number" id="year" name="year" min="1900" max="2025">
+
+        <label for="body-type">Тип кузова:</label>
+        <input type="text" id="body-type" name="body-type">
+
+        <label for="steering">Руль:</label>
+        <input type="text" id="steering" name="steering">
+
+        <label for="gearbox">КПП:</label>
+        <input type="text" id="gearbox" name="gearbox">
+
+        <label for="engine-volume">Объем двигателя:</label>
+        <input type="number" id="engine-volume" name="engine-volume" step="0.1">
+
+        <label for="fuel">Вид топлива:</label>
+        <input type="text" id="fuel" name="fuel">
+
+        <label for="customs">Растаможен:</label>
+        <input type="text" id="customs" name="customs">
+
+        <label for="drive">Привод:</label>
+        <input type="text" id="drive" name="drive">
+
+        <label for="color">Цвет:</label>
+        <input type="text" id="color" name="color">
+
+        <label for="additional">Дополнительно:</label>
+        <textarea id="additional" name="additional"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Местоположение</legend>
+        <label for="city">Город:</label>
+        <input type="text" id="city" name="city">
+      </fieldset>
+
+      <fieldset>
+        <legend>Контакты</legend>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="phone">Номер телефона:</label>
+        <input type="tel" id="phone" name="phone">
+      </fieldset>
+
+      <button type="submit">Создать объявление</button>
+    </form>
+  </main>
+{% endblock content %}

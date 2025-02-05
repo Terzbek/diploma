@@ -6,7 +6,3 @@ def index(request):
         "title": "Car24 - Home page",
     }
     return render(request, "main/index.html", context)
-
-
-def test(request):
-    return render(request, 'main/test2.html')
